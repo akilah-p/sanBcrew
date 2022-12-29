@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+
+
+
+body {
+    height: 100vh;
+    color: var(--text-color);
+    background: #f4e0cb;
+
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    ;
+    grid-gap: .5rem;
+}
+
+.picture {
+    width: 100%;
+
+
+    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
+    display: flex
+}
+
+.description {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(90, 0, 10, 0.4);
+    color: white;
+
+    align-items: flex-start;
+
+
+}
+
+
+.location {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 25px;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    background: rgba(90, 0, 10, 0.4);
+    color: white;
+
+
+
+}
+
+#posts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+    position: relative;
+}
+
+.post-list {
+    position: relative;
+
+}
+
+
+
+
+
+.picture img {
+    filter: blur(0px);
+    transition: filter 0.3s ease-in;
+    transform: scale(1.1);
+
+}
+
+main {
+    height: 100%;
+}
+
+#avatar-img {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 5px solid #272133;
+    margin-top: 10px;
+    box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
+
+    align-items: center;
+    overflow: hidden;
+
+}
+
+label {
+    text-align: center;
+    opacity: .5;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+aside.profile-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: fixed;
+}
+
+#profile-info {
+    background-color: #222831;
+    height: fit-content;
+    border-radius: 5px;
+
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.7);
+
+
+}
+
+#username-header {
+    margin-top: 0;
+}
+
+
+
+#headline-header {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+h2#username-header {
+    text-align: center;
+
+
+}
+
+#profile-likes {
+    align-self: center;
+}
+
+div {
+    display: grid !important;
+}
+
+.span {
+    margin: 20px;
+    padding-top: 40px;
+
+
+}
+
+.draw-border {
+    box-shadow: inset 0 0 0 4px #58cdd1;
+    color: #58afd1;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+    border: 20px;
+}
+
+.draw-border::before,
+.draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0rem;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+
+.draw-border:hover {
+    color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+    border-color: #eb196e;
+    -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-border:hover::before {
+    -webkit-transition-delay: 0s, 0s, 0.25s;
+    transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+    -webkit-transition-delay: 0s, 0.25s, 0s;
+    transition-delay: 0s, 0.25s, 0s;
+}
+
+#posts-section:hover .description,
+.location {
+    opacity: 1;
+}
+
+#posts-section:hover .naturpic img {
+    filter: blur(2px);
+}
+
+.delete-button {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.delete-button:hover {
+    background-color: #0d0d0d;
+}
+
+.delete-button:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+}
+
+
+
+
+
+/* .naturepic:hover {
+    opacity: 0.5;
+} */
+
+
+.like-button {
+    border: none;
+    background-color: rgb(49, 0, 128);
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    max-width: 200px;
+    transition: all ease 0.3s;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    content: 20px;
+
+}

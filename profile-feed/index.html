@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- title and favicon -->
+    <title>NatureApp</title>
+    <link rel="icon" type="image/x-icon" href="/assets/nature-app-favicon.png" />
+
+    <!-- js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"></script>
+    <script type="module" src="profile-feed.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="profile-feed.css" />
+
+    <!-- add link for page specific css -->
+</head>
+
+<body class="hovertext">
+    <header class="page-header">
+        <!-- Add a span and render specific user's profile name -->
+        <nav class="left-nav">
+            <a title='Return to Homepage' href="../"><img src="../assets/home-icon.png" /></a>
+            <a title='Create Post' href="../create-post/"><img src="../assets/create-icon.png" /></a>
+            <a title='Edit Profile' href="../create-profile/"><img src="../assets/edit-icon.png" /></a>
+        </nav>
+        <nav class="right-nav">
+            <a title='Sign Out' id="sign-out-link" href="../auth/"><img src="../assets/logout-white-icon.png" /></a>
+        </nav>
+    </header>
+    <!-- main class is for css -->
+    <!-- main is going to be the wrapper -->
+    <main>
+        <div class="wrapper">
+
+            <aside>
+                <div class="profile-info-container">
+                    <div id="profile-info">
+                        <label>Nature Profile</label>
+                        <h2 id="username-header"></h2>
+                        <img id="avatar-img" src="/assets/avatar.png" />
+                        <h3>Headline <br><span id="headline-header" class="draw-border"></span></h3>
+                        <label>Likes
+                            <div id="profile-likes"></div>
+                        </label>
+
+                    </div>
+                </div>
+            </aside>
+            <div id="posts-section">
+                <article class="post-list">
+
+                </article>
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+</body>
+
+</html>

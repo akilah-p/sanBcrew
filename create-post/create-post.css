@@ -1,0 +1,162 @@
+.page-header {
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #88a65a;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.page-header .logo {
+    height: 100%;
+}
+
+.page-header .title {
+    font-size: 1.3em;
+    font-weight: 800;
+    flex-grow: 2;
+}
+
+.page-header nav {
+    display: flex;
+    gap: 10px;
+}
+
+.page-header nav a {
+    color: white;
+}
+
+
+
+main {
+    height: 100%;
+}
+
+
+form {
+    display: flex !important;
+}
+
+#create-post-form {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 500px;
+
+}
+
+
+
+
+
+
+section {
+    width: 70%;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: 0.2s;
+}
+
+section h2 {
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+
+
+input,
+form textarea,
+form select,
+form button {
+    width: 100%;
+    font-size: 1.15em;
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    background: none;
+}
+
+
+
+label {
+    text-align: center;
+    font-weight: 200;
+    align-items: center;
+    display: list-item;
+}
+
+input[type='file'] {
+    padding: 0;
+    border: none;
+    color: #46a54e;
+
+}
+
+
+
+form select:invalid,
+form *::placeholder {
+    color: var(--placeholder-color);
+}
+
+.image-info {
+    width: 55%;
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+
+
+}
+
+#preview {
+    height: 500px;
+    object-fit: fill;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 1;
+    box-shadow: 10px 10px 8px 7px #000000bf;
+}
+
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+
+textarea {
+    background: none;
+    font-weight: 300;
+    color: white;
+    resize: none;
+    border-color: #46a54e;
+}
+
+
+form button {
+
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    background: #46a54e;
+    font-weight: bolder;
+}
+
+form button:hover {
+    opacity: 0.5;
+    background: none;
+    padding: 10px 80px;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+}
