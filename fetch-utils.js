@@ -1,6 +1,6 @@
-const SUPABASE_URL = 'https://fypohquqpythfovrkjgk.supabase.co';
+const SUPABASE_URL = 'https://tkqxoqtixhzlrrwspotd.supabase.co';
 const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5cG9ocXVxcHl0aGZvdnJramdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzA2MjY4NDksImV4cCI6MTk4NjIwMjg0OX0.4Mlgn-_lxcrVewpthtLz6HwNQsKnSFWym3b80u1bLNs';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrcXhvcXRpeGh6bHJyd3Nwb3RkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgxMDgzNjMsImV4cCI6MTk4MzY4NDM2M30.HfaWTJoZaFxI5PwxO4xvxCJ0g_pY6oryjIi4l9w_FAM';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -73,8 +73,8 @@ export async function uploadImage(imagePath, imageFile) {
 }
 
 // upload nature pics to Supabase
-export async function uploadNaturePic(imagePath, imageFile) {
-    const bucket = client.storage.from('naturepics');
+export async function uploadPictures(imagePath, imageFile) {
+    const bucket = client.storage.from('pictures');
     const response = await bucket.upload(imagePath, imageFile, {
         cacheControl: '3600',
         upsert: true,

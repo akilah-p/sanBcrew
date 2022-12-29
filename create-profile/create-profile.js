@@ -76,7 +76,7 @@ profileForm.addEventListener('submit', async (e) => {
     const profiles = await getProfile(user.id);
 
 
-    error = response.error;
+    error = response.textContent = '';
 
 
     if (error) {

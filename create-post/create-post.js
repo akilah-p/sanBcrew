@@ -1,6 +1,6 @@
 // import
 
-import { checkAuth, getProfile, getUser, uploadNaturePic, upsertPost } from '../fetch-utils.js';
+import { checkAuth, getProfile, getUser, uploadPictures, upsertPost } from '../fetch-utils.js';
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
 
@@ -61,9 +61,9 @@ postForm.addEventListener('submit', async (e) => {
 
     if (imageFile.size) {
         const imagePath = `${user.id}/${imageFile.name}`;
-        const url = await uploadNaturePic(imagePath, imageFile);
+        const url = await uploadPictures(imagePath, imageFile);
 
-        postObj.naturepic_url = url;
+        postObj.pictures_url = url;
     }
 
     // upsert

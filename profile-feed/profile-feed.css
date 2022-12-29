@@ -114,6 +114,10 @@ label {
     font-size: 20px;
 }
 
+aside {
+    display: flex;
+}
+
 aside.profile-info-container {
     display: flex;
     flex-direction: column;
