@@ -7,15 +7,15 @@ import { checkAuth, getProfile, getProfiles, getUser, searchByUsername } from '.
 import { renderProfile } from './render-utils.js';
 
 /* Get DOM Elements */
+const marilynEl = document.getElementById('marilyn-img');
+
+const miliEl = document.getElementById('mili-img');
+
 
 checkAuth();
-/* State */
-
-/* Events */
-
-
-/* Display Functions */
-
+export async function displayMarilyn(){
+    
+}
 
 
 
