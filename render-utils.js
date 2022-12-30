@@ -2,41 +2,18 @@ import { deletePost, getPosts } from './fetch-utils.js';
 import { displayPosts } from './profile-feed/profile-feed.js';
 
 // render profile on home page
-export function renderProfile(profile) {
-    // container and elements and link
-    const a = document.createElement('a');
-
-    const img = document.createElement('img');
-    // avatar
-
-    // username
+export function renderModalBox() {
+    const div = document.createElement('div');
     const p = document.createElement('p');
-    const h2 = document.createElement('h2');
+    const btn = document.createElement('button');
 
-    // class lists
-    a.classList.add('profile-container');
+    div.classList.add('modal-box');
+    p.classList.add('modal-message');
+    btn.classList.add('close');
 
-    img.classList.add('avatar');
-    p.classList.add('username');
-    h2.classList.add('headline');
-
-
-    img.alt = '';
-    // avatar
-    img.src = profile.avatar_url;
-    img.alt = 'avatar';
-
-    // text content
-    p.textContent = `${profile.username}`;
-    a.href = `../profile-feed/?id=${profile.id}`;
-
-
-    // append
-    a.append(img, h2, p);
-
-    // return
-    return a;
+    // figure out how to only display once per user
 }
+
 
 export function renderPost(postObject, profile) {
     const div = document.createElement('div');
