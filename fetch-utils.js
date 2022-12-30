@@ -92,7 +92,7 @@ export async function getProfile(user_id) {
     if (!response) {
         return null;
     } else {
-        return response;
+        return checkError(response);
     }
 }
 
@@ -126,15 +126,11 @@ export async function profileLikes(id) {
 
     return checkError(response);
 }
-//stretch  goal: search by username
-export async function searchByUsername(username) {
-    let query = await client
-        .from('profiles')
-        .select('*')
-        .order('username')
-        .ilike('username', `%${username}%`);
-    return query;
+
+export async function timeStamp(id) {
+    const response = await client.from('posts').
 }
+
 
 // error handling
 function checkError(response) {

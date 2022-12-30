@@ -11,6 +11,8 @@ export function renderModalBox() {
     p.classList.add('modal-message');
     btn.classList.add('close');
 
+    p.textContent = ''
+
     // figure out how to only display once per user
 }
 
