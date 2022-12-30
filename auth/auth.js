@@ -75,16 +75,16 @@ authForm.addEventListener('submit', async (e) => {
 function displayAuth() {
     // set the text display on the header, button, and change type link
     if (isSignIn) {
-        authHeader.textContent = 'NatureApp';
-        authWelcome.textContent = 'Welcome Back';
-        changeType.textContent = 'Need to create an account?';
+        authHeader.textContent = 'X100PRE';
+        authWelcome.textContent = 'Welcome Back! Maldita sea otra apagon.';
+        changeType.textContent = 'Need to create an account? Marca aqui!';
         authButton.textContent = 'Sign In';
 
 
     } else {
-        authHeader.textContent = 'Create Account In NatureApp';
-        authWelcome.textContent = "Welcome! Let's explore nature together!";
-        changeType.textContent = 'Already have an account?';
+        authHeader.textContent = 'Create Account in X100PRE';
+        authWelcome.textContent = "Cuida'o con mi corillo, que somo' un montón";
+        changeType.textContent = 'Ya tiene una cuenta!';
         authButton.textContent = 'Sign Up';
 
     }
