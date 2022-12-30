@@ -1,5 +1,5 @@
 import '../auth/user.js';
-import { getUser, getPosts, getProfileById, getProfile, checkAuth, profileLikes } from '../fetch-utils.js';
+import { getUser, getPosts, getProfileById, getProfile, checkAuth, profileLikes, createMessage, onMessage } from '../fetch-utils.js';
 import { renderPost } from '../render-utils.js';
 
 const postSectionsEl = document.getElementById('posts-section');
@@ -7,7 +7,7 @@ const avatarImgEl = document.querySelector('#avatar-img');
 const usernameHeaderEl = document.querySelector('#username-header');
 const headlineHeaderEl = document.querySelector('#headline-header');
 const profileLikesEl = document.querySelector('#profile-likes');
-const messageFeedEl = document.querySelector('Messages-for-post');
+const messageForm = document.querySelector('Messages-for-post');
 
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
@@ -70,9 +70,6 @@ function renderLikes({ likes, id }) {
     likeButton.textContent = `${likes}🍃`;
 
 
-
-
-
     likeButton.addEventListener('click', async () => {
         await profileLikes(id);
         await displayProfile();
@@ -81,38 +78,23 @@ function renderLikes({ likes, id }) {
     return likeButton;
 }
 
-export function renderImageNav() {
-    const postLength = document.getElementsByClassName('post-list')[0];
-    const prevButton = document.createElement('button');
-    const nextButton = document.createElement('button');
-    const nav = document.createElement('nav');
-
-    nav.classList.add('gallery-buttons');
-
-    prevButton.textContent = 'Prev ⬅️';
-    nextButton.textContent = ' ➡️Next ';
-    nav.textContent = '';
-
-    nav.append(prevButton, nextButton);
-
-
-
-//     nextButton.addEventListener('click', async () => {
-//         const nextPost = [];
-//         if (index < postLength - 1) {
-//             index++;
-//             postLength[index];
-//         }
-//         return nextPost(postLength[index]);
-//     });
-
-//     prevButton.addEventListener('click', async () => {
-//         const prevPost = [];
-//         if (index > 0) {
-//             index--;
-//             postLength[index];
-//         }
-//         return prevPost(postLength[index]);
-//     });
-//     return nav;
-// 
+messageForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(messageForm);
+    const senderProfile = await getProfileById(user.id);
+    // console.log('user', user);
+    // console.log('senderProfile', senderProfile);
+    if (!senderProfile) {
+        alert('Make a profile first!');
+        location.assign('/');
+    } else {
+        await createMessage({
+            text: data.get('message'),
+            sender: senderProfile.data.username,
+            recipient_id: id,
+            user_id: user.id,
+            sender_avatar: senderProfile.data.avatar_url,
+        });
+        messageForm.reset();
+    }
+});

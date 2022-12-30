@@ -127,10 +127,18 @@ export async function profileLikes(id) {
     return checkError(response);
 }
 
-export async function timeStamp(id) {
-    const response = await client.from('posts').
+// export async function timeStamp(id) {
+//     const response = await client.from('posts').select().match
+// }
+
+export async function createMessage(message) {
+    const response = await client.from('messaging').insert(message).single();
+    return checkError(response);
 }
 
+export function onMessage(profileId, handleMessage) {
+    client.from(`messaging:recipient_id=eq.${profileId}`).on('INSERT', handleMessage).subscribe();
+}
 
 // error handling
 function checkError(response) {
