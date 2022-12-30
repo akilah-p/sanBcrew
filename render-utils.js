@@ -5,34 +5,34 @@ import { displayPosts } from './profile-feed/profile-feed.js';
 export function renderProfile(profile) {
     // container and elements and link
     const a = document.createElement('a');
-    // post photo
+
     const img = document.createElement('img');
     // avatar
-    const img2 = document.createElement('img');
+
     // username
     const p = document.createElement('p');
+    const h2 = document.createElement('h2');
 
     // class lists
     a.classList.add('profile-container');
-    img.classList.add('polaroid');
-    img2.classList.add('avatar');
-    p.classList.add('username');
 
-    // images
-    // polaroid photo
-    // img.src = profile.naturepic_url;
-    // leave blank so it is replaced with user submitted alt text
+    img.classList.add('avatar');
+    p.classList.add('username');
+    h2.classList.add('headline');
+
+
     img.alt = '';
     // avatar
-    img2.src = profile.avatar_url;
-    img2.alt = 'avatar';
+    img.src = profile.avatar_url;
+    img.alt = 'avatar';
 
     // text content
     p.textContent = `${profile.username}`;
     a.href = `../profile-feed/?id=${profile.id}`;
 
+
     // append
-    a.append(img2, p);
+    a.append(img, h2, p);
 
     // return
     return a;

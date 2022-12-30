@@ -1,6 +1,6 @@
 :root {
     --background: rgb(224, 234, 247);
-    --header-background: white;
+    --header-background: none;
     --text-color: rgb(7, 5, 68);
     --label-color: rgb(75, 102, 98);
     --placeholder-color: rgb(136, 136, 153);
@@ -8,7 +8,9 @@
     --action-color: rgb(77, 132, 252);
 }
 
-
+body {
+    height: 100vh;
+}
 
 .body div {
     font-family: "Inter", sans-serif;
@@ -56,7 +58,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7));
+    background: none;
 
 
     /* background-color: #88a65a;
@@ -78,9 +80,9 @@
     gap: 10px;
 }
 
-.page-header nav a {
+/* .page-header nav a {
     color: white;
-}
+} */
 
 
 
@@ -105,12 +107,13 @@
 
 main {
     padding: 20px;
-    background: linear-gradient(rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url('../assets/pdx6.jpeg');
+    background-image: url('../assets/uvst.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: white;
+    height: 100vh;
 
 
 }

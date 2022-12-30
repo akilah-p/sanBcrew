@@ -7,16 +7,13 @@ const avatarImgEl = document.querySelector('#avatar-img');
 const usernameHeaderEl = document.querySelector('#username-header');
 const headlineHeaderEl = document.querySelector('#headline-header');
 const profileLikesEl = document.querySelector('#profile-likes');
-
-
-
-
 const messageFeedEl = document.querySelector('Messages-for-post');
+
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
 const user = getUser();
 
-let index = 0;
+
 checkAuth();
 window.addEventListener('load', async () => {
     // error handling
@@ -65,7 +62,7 @@ export async function displayPosts() {
 
 function renderLikes({ likes, id }) {
     const likeButton = document.createElement('button');
-    const div = document.createElement('div');
+
 
 
 
@@ -100,24 +97,22 @@ export function renderImageNav() {
 
 
 
-    nextButton.addEventListener('click', async () => {
-        const nextPost = [];
-        if (index < postLength - 1) {
-            index++;
-            postLength[index];
-        }
-        return nextPost(postLength[index]);
-    });
+//     nextButton.addEventListener('click', async () => {
+//         const nextPost = [];
+//         if (index < postLength - 1) {
+//             index++;
+//             postLength[index];
+//         }
+//         return nextPost(postLength[index]);
+//     });
 
-    prevButton.addEventListener('click', async () => {
-        const prevPost = [];
-        if (index > 0) {
-            index--;
-            postLength[index];
-        }
-        return prevPost(postLength[index]);
-    });
-    return nav;
-}
-
-
+//     prevButton.addEventListener('click', async () => {
+//         const prevPost = [];
+//         if (index > 0) {
+//             index--;
+//             postLength[index];
+//         }
+//         return prevPost(postLength[index]);
+//     });
+//     return nav;
+// 
