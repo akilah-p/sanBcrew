@@ -16,62 +16,62 @@ export function renderModalBox() {
     // figure out how to only display once per user
 }
 
-export async function renderMarilynImage(marilyn) {
-    const divImg = document.createElement('div');
-    const img = document.createElement('img');
+// export async function renderMarilynImage(marilyn) {
+//     const divImg = document.createElement('div');
+//     const img = document.createElement('img');
 
 
-    divImg.classList.add('img-container');
-    img.classList.add('marilyn-mag');
+//     divImg.classList.add('img-container');
+//     img.classList.add('marilyn-mag');
 
-    img.src = '/assets/Marilyn.png';
+//     img.src = '/assets/Marilyn.png';
 
-    divImg.append(img);
-    return divImg;
-}
+//     divImg.append(img);
+//     return divImg;
+// }
 
-export async function renderMiliImage() {
-    const divImg = document.createElement('div');
-    const img = document.createElement('img');
-
-
-    divImg.classList.add('mili-img-container');
-    img.classList.add('mili-mag');
-
-    img.src = '/assets/Mili.png';
-
-    divImg.append(img);
-    return divImg;
-}
-
-export async function renderMarilynVideo(marilyn) {
-
-    const divVideo = document.createElement('div');
-    const video = document.createElement('video');
-
-    divVideo.classList.add('video-container');
-    video.classList.add('marilyn-vid');
-
-    video.src = '/assets/Marilyn.mp4';
-
-    divVideo.append(video);
-    return divVideo;
-}
+// export async function renderMiliImage() {
+//     const divImg = document.createElement('div');
+//     const img = document.createElement('img');
 
 
-export async function renderMiliVideo() {
+//     divImg.classList.add('mili-img-container');
+//     img.classList.add('mili-mag');
 
-    const divVideo = document.createElement('div');
-    const video = document.createElement('video');
+//     img.src = '/assets/Mili.png';
 
-    divVideo.classList.add('mili-video-container');
-    video.classList.add('mili-vid');
+//     divImg.append(img);
+//     return divImg;
+// }
 
-    video.src = '/assets/Mili.mp4';
+// export async function renderMarilynVideo(marilyn) {
 
-    divVideo.append(video);
-    return divVideo;
-}
+//     const divVideo = document.createElement('div');
+//     const video = document.createElement('video');
+
+//     divVideo.classList.add('video-container');
+//     video.classList.add('marilyn-vid');
+
+//     video.src = '/assets/Marilyn.mp4';
+
+//     divVideo.append(video);
+//     return divVideo;
+// }
+
+
+// export async function renderMiliVideo() {
+
+//     const divVideo = document.createElement('div');
+//     const video = document.createElement('video');
+
+//     divVideo.classList.add('mili-video-container');
+//     video.classList.add('mili-vid');
+
+//     video.src = '/assets/Mili.mp4';
+
+//     divVideo.append(video);
+//     return divVideo;
+// }
 
 
 export function renderPost(postObject, profile) {

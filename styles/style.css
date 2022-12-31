@@ -1,81 +1,51 @@
-main {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+.friends-section {
+    display: flex;
+
 }
 
-.friends-section {
+.bitmoji-section {
     display: flex;
 }
 
-.marilyn-left {
-    width: 50%;
-    height: 100vh;
 
+
+img {
+    height: 100px;
 }
 
-.mili-right {
-    width: 50%;
-    height: 100vh;
+video {
+    height: 100px;
 }
 
-
-/* .marilyn-container {
-    position: absolute;
-    width: 250px;
-    height: 320px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-
-
-.marilyn-img {
-
-    height: 20px;
+.mili-container,
+.marilyn-container {
+    display: flex;
+    flex-direction: row;
+    object-fit: contain;
 }
 
-.marilyn-video {
-
-    height: 20px;
-}
-
+.marilyn-img,
 .mili-img {
-
-    height: 50px;
-    width: 50px;
-    /* position: absolute;
-    backface-visibility: hidden;
-    object-fit: contain; */
-
+    height: 100%
 }
 
-.mili-video {
-
-    height: 50px;
-    width: 50px;
-    /* position: absolute;
-    backface-visibility: hidden;
-    object-fit: contain; */
-}
-
-.mili-container {
-    position: absolute;
-    width: 250px;
-    height: 320px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.mili-video,
+.marilyn-video {
+    height: 100%;
 }
 
 .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
+    padding: 20px;
+}
+
+
+
+#marilyn-card,
+#mili-card {
+    width: 50%;
 
 }
+
 
 .flipCard {
     transform: rotateY(180deg);
