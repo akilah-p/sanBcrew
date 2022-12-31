@@ -2,20 +2,64 @@
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 
-import { checkAuth, getProfile, getProfiles, getUser, searchByUsername } from './fetch-utils.js';
+import { checkAuth } from './fetch-utils.js';
 
-import { renderProfile } from './render-utils.js';
+import { renderMarilynVideo, renderMarilynImage, renderMiliImage, renderMiliVideo } from './render-utils.js';
 
 /* Get DOM Elements */
-const marilynEl = document.getElementById('marilyn-img');
-
-const miliEl = document.getElementById('mili-img');
-
+const marilynEl = document.getElementById('marilyn-card');
+const miliEl = document.getElementById('mili-card');
 
 checkAuth();
-export async function displayMarilyn(){
+// window.addEventListener('load', async () => {
+//     displayMarilyn();
+//     displayMili();
+// });
+
+
+const card = document.querySelector('card');
+
+
+function flipCard() {
+    card.classList.toggle('flip-card');
     
 }
+
+card.addEventListener('click', flipCard)
+
+
+// async function displayMarilyn() {
+//     marilynEl.textContent = '';
+//     const front = renderMarilynImage();
+//     const back = renderMarilynVideo();
+
+
+//     marilynEl.append(front, back);
+
+//     marilynEl.addEventListener('click', () => {
+//         marilynEl.classList.toggle('marilyn-card');
+
+//         console.log('marilyn', marilynEl);
+
+//     });
+//     return marilynEl;
+
+// }
+
+// async function displayMili() {
+//     miliEl.textContent = '';
+//     const front = renderMiliImage();
+//     const back = renderMiliVideo();
+
+
+//     miliEl.append(front, back);
+
+//     miliEl.addEventListener('click', () => {
+//         miliEl.classList.toggle('mili-card');
+//     });
+//     return miliEl;
+// }
+
 
 
 
