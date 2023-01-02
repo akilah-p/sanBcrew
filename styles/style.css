@@ -1,52 +1,74 @@
 .friends-section {
     display: flex;
+    height: 50%;
+    width: 100%;
+    padding: 20px;
 
 }
 
-.bitmoji-section {
+.us-three {
     display: flex;
+    height: 50%;
+    width: 100%;
+
 }
 
 
 
 img {
-    height: 100px;
+    width: 40%;
+    height: 40%;
+    object-fit: max-content;
+
 }
 
 video {
-    height: 100px;
+    width: 40%;
+    height: 40%;
+    object-fit: max-content;
 }
 
-.mili-container,
-.marilyn-container {
-    display: flex;
-    flex-direction: row;
-    object-fit: contain;
-}
+
 
 .marilyn-img,
 .mili-img {
-    height: 100%
+
+    object-fit: max-content;
+    backface-visibility: hidden;
 }
 
 .mili-video,
 .marilyn-video {
-    height: 100%;
+
+    object-fit: max-content;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 
 .card {
-    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.8 ease;
 }
 
 
-
+/* 
 #marilyn-card,
 #mili-card {
-    width: 50%;
+    position: absolute;
+    width: 250px;
+    height: 320px;
 
-}
+    transform: translate(-50%, -50%);
+} */
+
+
+/* flipping affect */
 
 
 .flipCard {
     transform: rotateY(180deg);
 }
+
+.mili
