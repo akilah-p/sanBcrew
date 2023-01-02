@@ -1,5 +1,6 @@
-import { deletePost, getPosts } from './fetch-utils.js';
+import { deletePost, getPosts, getProfileById, getProfiles } from './fetch-utils.js';
 import { displayPosts } from './profile-feed/profile-feed.js';
+
 
 // render profile on home page
 export function renderModalBox() {
@@ -16,103 +17,88 @@ export function renderModalBox() {
     // figure out how to only display once per user
 }
 
-// export async function renderMarilynImage(marilyn) {
-//     const divImg = document.createElement('div');
-//     const img = document.createElement('img');
+export async function renderMusicPlayer(profile) {
+    const wrapper = document.createElement('div');
+    const screen = document.createElement('div');
+    const nowPlaying = document.createElement('div');
+    const avatar = document.createElement('img');
+    const title = document.createElement('p');
+    const artist = document.createElement('p');
 
 
-//     divImg.classList.add('img-container');
-//     img.classList.add('marilyn-mag');
+    wrapper.classList.add('wrapper');
+    screen.classList.add('screen');
+    avatar.classList.add('avatar');
 
-//     img.src = '/assets/Marilyn.png';
+    nowPlaying.classList.add('now-playing');
+    title.classList.add('title');
+    artist.classList.add('artist');
 
-//     divImg.append(img);
-//     return divImg;
-// }
+    avatar.src = profile.avatar_url;
+    nowPlaying.textContent = `${}`;
+    title.textContent = `${}`;
+    artist.textContent = `${}`;
 
-// export async function renderMiliImage() {
-//     const divImg = document.createElement('div');
-//     const img = document.createElement('img');
+    wrapper.append(screen, avatar, nowPlaying, title, artist);
 
-
-//     divImg.classList.add('mili-img-container');
-//     img.classList.add('mili-mag');
-
-//     img.src = '/assets/Mili.png';
-
-//     divImg.append(img);
-//     return divImg;
-// }
-
-// export async function renderMarilynVideo(marilyn) {
-
-//     const divVideo = document.createElement('div');
-//     const video = document.createElement('video');
-
-//     divVideo.classList.add('video-container');
-//     video.classList.add('marilyn-vid');
-
-//     video.src = '/assets/Marilyn.mp4';
-
-//     divVideo.append(video);
-//     return divVideo;
-// }
+    return wrapper;
+}
 
 
-// export async function renderMiliVideo() {
-
-//     const divVideo = document.createElement('div');
-//     const video = document.createElement('video');
-
-//     divVideo.classList.add('mili-video-container');
-//     video.classList.add('mili-vid');
-
-//     video.src = '/assets/Mili.mp4';
-
-//     divVideo.append(video);
-//     return divVideo;
-// }
 
 
-export function renderPost(postObject, profile) {
-    const div = document.createElement('div');
-    const img = document.createElement('img');
-    const p = document.createElement('p');
-    const p1 = document.createElement('p');
-    const deleteButton = document.createElement('button');
-    if (postObject.profile_id === profile.data.id) {
-        deleteButton.classList.add('delete-button');
-    } else {
-        deleteButton.style.display = 'none';
-    }
 
-    div.classList.add('post-list');
-    img.classList.add('picture');
-    p.classList.add('location');
-    p1.classList.add('description');
+export async function renderControls() {
+    const controls = document.createElement('div');
+    const previous = document.createElement('button');
+    const play = document.createElement('button');
+    const pause = document.createElement('button');
+    const next = document.createElement('button');
 
-    img.src = postObject.pictures_url;
-    img.alt = '';
-    p.textContent = postObject.location;
-    p1.textContent = postObject.description;
-    deleteButton.textContent = 'Delete Post';
+    controls.classList.add('controls');
+    previous.classList.add('previous');
 
-    // delete post event listener
-    deleteButton.addEventListener('click', async () => {
-        // deletePosts by post id
-        await deletePost(postObject.id);
 
-        // update posts by profile_id
-        const updatedPosts = await getPosts(postObject.profile_id);
+    previous.textContent = '⏮️';
+    pause.textContent = '⏸️';
+    next.textContent = '⏭️';
+    const playPause = document.createElement('button');
+    playPause.textContent = '';
+    button.classList.add('play-pause');
 
-        if (confirm('Click Ok to delete post. This action cannot be done')) {
-            // display updated posts
-            displayPosts(updatedPosts);
-        } else {
-            location.assign(`/profile-feed/?id=${profile.profile_id}`);
-        }
-    });
+    controls.append(previous, button, next);
 
-    div.append(img, p, p1, deleteButton);
-    return div;
+    return controls;
+}
+
+export async function renderSeeker() {
+    const slider = document.createElement('div');
+    const currentTime = document.createElement('div');
+    const input = document.createElement('input');
+    const duration = document.createElement('div');
+
+    slider.classList.add('slider');
+    currentTime.classList.add('current-time');
+    input.classList.add('input');
+    duration.classList.add('duration');
+
+    input.setAttribute('type', 'range');
+    input.min('1');
+    input.max('100');
+    input.value('0');
+
+}
+
+export async function renderVolume() {
+    const volume = document.createElement('div');
+    const input = document.createElement('input');
+
+    input.classList.add('volume');
+
+
+    input.setAttribute('type', 'range');
+    input.min('1');
+    input.max('100');
+    input.value('99');
+
 }
