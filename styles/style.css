@@ -47,7 +47,7 @@ video {
 
 .card {
     overflow: hidden;
-    position: relative;
+    position: sticky;
     transform-style: preserve-3d;
     transition: all 0.8 ease;
 }
@@ -67,8 +67,6 @@ video {
 /* flipping affect */
 
 
-.flipCard {
+/* .flipCard {
     transform: rotateY(180deg);
-}
-
-.mili
+} */

@@ -4,11 +4,9 @@ import './auth/user.js';
 
 import { checkAuth } from './fetch-utils.js';
 
-import { renderMarilynVideo, renderMarilynImage, renderMiliImage, renderMiliVideo } from './render-utils.js';
 
 /* Get DOM Elements */
-const marilynEl = document.getElementById('marilyn-card');
-const miliEl = document.getElementById('mili-card');
+
 
 checkAuth();
 // window.addEventListener('load', async () => {
@@ -17,15 +15,15 @@ checkAuth();
 // });
 
 
-const card = document.querySelector('card');
+// const card = document.querySelector('card');
 
 
-function flipCard() {
-    card.classList.toggle('flip-card');
+// function flipCard() {
+//     card.classList.toggle('flip-card');
 
-}
+// }
 
-card.addEventListener('click', flipCard);
+// card.addEventListener('click', flipCard);
 
 
 // async function displayMarilyn() {
