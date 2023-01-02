@@ -1,6 +1,6 @@
 import '../auth/user.js';
 import { getUser, getPosts, getProfileById, getProfile, checkAuth, profileLikes, createMessage, onMessage } from '../fetch-utils.js';
-import { renderPost } from '../render-utils.js';
+import { renderPost, renderControls, renderMusicPlayer, renderSeeker, renderVolume } from '../render-utils.js';
 
 const postSectionsEl = document.getElementById('posts-section');
 const avatarImgEl = document.querySelector('#avatar-img');
@@ -12,6 +12,9 @@ const messageForm = document.querySelector('Messages-for-post');
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
 const user = getUser();
+
+
+
 
 
 checkAuth();

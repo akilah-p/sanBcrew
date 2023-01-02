@@ -1,35 +1,14 @@
-import { deletePost, getPosts, getProfileById, getProfiles } from './fetch-utils.js';
-import { displayPosts } from './profile-feed/profile-feed.js';
 
-
-
-export function renderModalBox() {
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    const btn = document.createElement('button');
-
-    div.classList.add('modal-box');
-    p.classList.add('modal-message');
-    btn.classList.add('close');
-
-    p.textContent = ''
-
-    // figure out how to only display once per user
-}
-
-
-let track_index = 0;
-let isPlaying = false;
+let trackIndex = 0;
 let updateTimer;
-
-// let track_list = [];
-
+let currTrack = document.createElement('audio');
+let isPlaying = false;
+let track_list = [];
 
 export async function renderMusicPlayer(profile) {
     const wrapper = document.createElement('div');
     const screen = document.createElement('div');
     const nowPlaying = document.createElement('div');
-    const current = document.createElement('audio');
     const avatar = document.createElement('img');
     const title = document.createElement('p');
     const artist = document.createElement('p');
@@ -44,17 +23,14 @@ export async function renderMusicPlayer(profile) {
     artist.classList.add('artist');
 
     avatar.src = profile.avatar_url;
-    nowPlaying.textContent = `${}`;
-    title.textContent = `${}`;
-    artist.textContent = `${}`;
+    nowPlaying.textContent = 'Playing' + (trackIndex + 1) + ' Of ' + track_list.length;
+    title.textContent = track_list[trackIndex].name;
+    artist.textContent = track_list[trackIndex].artist;
 
     wrapper.append(screen, avatar, nowPlaying, title, artist);
 
     return wrapper;
 }
-
-
-
 
 
 export async function renderControls() {
@@ -64,27 +40,39 @@ export async function renderControls() {
 
     controls.classList.add('controls');
     previous.classList.add('previous');
-
+    next.classList.add('next');
 
     previous.textContent = '⏮️';
-    pause.textContent = '⏸️';
+
     next.textContent = '⏭️';
     const playPause = document.createElement('button');
     playPause.textContent = '';
-    button.classList.add('play-pause');
+    playPause.classList.add('play-pause');
 
-    controls.append(previous, button, next);
+    controls.append(previous, playPause, next);
+
+    playPause.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (currTrack.paused) {
+            currTrack.play();
+            playPause.style.display === '▶️';
+        } else {
+            currTrack.pause();
+            playPause.style.display === '⏸️';
+        }
+    });
 
     return controls;
 }
 
 export async function renderSeeker() {
-    const slider = document.createElement('div');
+    const seeker = document.createElement('div');
     const currentTime = document.createElement('div');
     const input = document.createElement('input');
     const duration = document.createElement('div');
 
-    slider.classList.add('slider');
+    seeker.classList.add('seeker');
     currentTime.classList.add('current-time');
     input.classList.add('input');
     duration.classList.add('duration');
@@ -94,11 +82,20 @@ export async function renderSeeker() {
     input.max('100');
     input.value('0');
 
-    slider.append(currentTime, input, duration);
-    return slider;
+    seeker.append(currentTime, input, duration);
+
+
+    return seeker;
+
 }
 
-export async function renderVolume() {
+
+return seeker;
+
+
+
+
+export function renderVolume() {
     const volume = document.createElement('div');
     const input = document.createElement('input');
 
@@ -111,4 +108,26 @@ export async function renderVolume() {
     input.value('99');
 
     volume.append(input);
+}
+
+
+export async function loadTrack(trackIndex) {
+    const slider = document.querySelector('.input');
+    currentTime.textContent = '00:00';
+    duration.textContent = '00:00';
+    slider.value = 0;
+}
+
+export function playNext() {
+    if (trackIndex < track_list.length - 1)
+        trackIndex += 1;
+    else trackIndex = 0;
+
+
+}
+
+export function playPrev() {
+    if (trackIndex > 0)
+        trackIndex -= 1;
+    else trackIndex = track_list.length - 1;
 }
