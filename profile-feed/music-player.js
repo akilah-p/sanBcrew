@@ -23,32 +23,22 @@ import { getProfileById } from '../fetch-utils.js';
 
 const songs = new Audio[
     {
-        name: 'Sorry Papi',
+        name: 'El Mundo Es Mio',
         artist: 'Bad Bunny',
-        src: '.assets/EUDTM/01 El Mundo ES MIO.mp3'
+        song: '.assets/01.mp3',
+        color: "#f5c63d"
 
+    },
+
+    {
+        name: 'Yonaguni',
+        artist: 'Bad Bunny',
+        song: 'assets/01 - Yonaguni [Explicit].mp3',
+        color: "#afc5c3"
     }
 ]
 
-// export function getSongs() {
-//     const songs = [
-//         ''assets\EUTDM\01 EL MUNDO ES MIO.mp3'
-//         'assets\EUTDM\02 TE MUDASTE.mp3
-//         'assets\EUTDM\03 HOY COBRE.mp3
-//         'assets\EUTDM\04 MALDITA POBREZA.mp3
-//         'assets\EUTDM\05 LA NOCHE DE ANOCHE(ft ROSALIA).mp3
-//         'assets\EUTDM\06 TE DESEO LO MEJOR.mp3
-//         'assets\EUTDM\07 YO VISTO ASI.mp3
-//         'assets\EUTDM\08 HACIENDO QUE ME AMAS.mp3
-//         'assets\EUTDM\09 BOOKER T.mp3
-//         'assets\EUTDM\10 LA DROGA.mp3
-//         'assets\EUTDM\11 DAKITI(ft Jhay Cortez).mp3
-//         'assets\EUTDM\12 TRELLAS.mp3
-//         'assets\EUTDM\13 SORRY PAPI(ft ABRA).mp3
-//         'assets\EUTDM\14 120.mp3
-//         'assets\EUTDM\15 ANTES QUE SE ACABE.mp3
-//         'assets\EUTDM\16 CANTARES DE NAVIDAD.mp3]
-// }
+    /
 
 // HTML elements
 
